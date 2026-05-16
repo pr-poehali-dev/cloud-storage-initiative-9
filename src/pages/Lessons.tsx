@@ -14,8 +14,7 @@ interface Lesson {
   explanation: string;
   example: string;
   exampleTranslation: string;
-  youtubeId: string;
-  youtubeStart: number;
+  youtubeSearch: string;
 }
 
 const lessons: Lesson[] = [
@@ -30,8 +29,7 @@ const lessons: Lesson[] = [
     explanation: "«Slip» означает «выскользнуть». Когда что-то «выскользнуло из твоего разума» — ты об этом забыл. Используется как извинение за забывчивость.",
     example: "Sorry I didn't call — it slipped my mind!",
     exampleTranslation: "Прости, не позвонил — вылетело из головы!",
-    youtubeId: "4pcJANFoWPc",
-    youtubeStart: 0,
+    youtubeSearch: "it slipped my mind Lion King scene",
   },
   {
     id: 2,
@@ -44,8 +42,7 @@ const lessons: Lesson[] = [
     explanation: "«Nuts» в сленге = сумасшедший. «Are you nuts?» — риторический вопрос, выражающий шок или недоверие. Менее грубо, чем «crazy».",
     example: "You ate a whole pizza alone? Are you nuts?!",
     exampleTranslation: "Ты съел целую пиццу один? Ты в своём уме?!",
-    youtubeId: "BVqCNFXFQnY",
-    youtubeStart: 0,
+    youtubeSearch: "Home Alone are you nuts scene",
   },
   {
     id: 3,
@@ -58,8 +55,7 @@ const lessons: Lesson[] = [
     explanation: "«Tea» в LGBTQ+ и молодёжном сленге = горячие новости, подробности, сплетни. «Spill» = пролить, выложить. Используется когда хочешь узнать подробности.",
     example: "You were at that party — spill the tea!",
     exampleTranslation: "Ты же была на той вечеринке — рассказывай всё!",
-    youtubeId: "taIwAP5GDQY",
-    youtubeStart: 0,
+    youtubeSearch: "RuPaul Drag Race spill the tea",
   },
   {
     id: 4,
@@ -72,8 +68,7 @@ const lessons: Lesson[] = [
     explanation: "Детская рифмованная фраза для усиления слова «easy». Используется иронично или когда хочешь показать, что задача тривиальна.",
     example: "— Can you fix this? — Easy peasy, lemon squeezy!",
     exampleTranslation: "— Ты можешь это починить? — Да раз плюнуть!",
-    youtubeId: "7bIE4wOAtG0",
-    youtubeStart: 0,
+    youtubeSearch: "Shrek easy peasy lemon squeezy scene",
   },
   {
     id: 5,
@@ -86,8 +81,7 @@ const lessons: Lesson[] = [
     explanation: "«Ghost» как глагол — внезапно исчезнуть из чьей-то жизни, перестать отвечать без объяснений. Очень популярный современный сленг.",
     example: "We went on two dates and then he ghosted me.",
     exampleTranslation: "Мы сходили на два свидания, а потом он пропал.",
-    youtubeId: "kNmHhAeRVDU",
-    youtubeStart: 0,
+    youtubeSearch: "YOU series Netflix ghosted scene",
   },
   {
     id: 6,
@@ -100,8 +94,7 @@ const lessons: Lesson[] = [
     explanation: "«Lowkey» буквально «тихая тональность». В сленге: немного, в тайне, не афишируя. Противоположность — «highkey» (открыто, очень).",
     example: "I lowkey love this cheesy song.",
     exampleTranslation: "Мне втайне нравится эта пошловатая песня.",
-    youtubeId: "fJ9rUzIMcZQ",
-    youtubeStart: 0,
+    youtubeSearch: "Gossip Girl lowkey scene",
   },
   {
     id: 7,
@@ -114,8 +107,7 @@ const lessons: Lesson[] = [
     explanation: "«Cap» в сленге = ложь. «No cap» = никакой лжи, честно. Используется чтобы подчеркнуть правдивость. Часто ставится в конец фразы.",
     example: "That movie was the best thing I've ever seen, no cap.",
     exampleTranslation: "Этот фильм — лучшее, что я видел, без шуток.",
-    youtubeId: "b9EkMcFx7RM",
-    youtubeStart: 0,
+    youtubeSearch: "Stranger Things no cap slang",
   },
   {
     id: 8,
@@ -128,8 +120,7 @@ const lessons: Lesson[] = [
     explanation: "Сокращение от «delusional» (иллюзорный). Описывает человека с нереалистичными ожиданиями. Используется с юмором, не всегда как оскорбление.",
     example: "She thinks they're dating after one text. Total delulu.",
     exampleTranslation: "Она думает, что они встречаются после одного сообщения. Полная иллюзия.",
-    youtubeId: "pBk4NYhWNMM",
-    youtubeStart: 0,
+    youtubeSearch: "Barbie movie 2023 delulu scene",
   },
   {
     id: 9,
@@ -142,48 +133,44 @@ const lessons: Lesson[] = [
     explanation: "Финальная карточка — три фразы в одном диалоге. Видишь, как сленг работает в живом разговоре? Теперь ты готов к итоговому тесту!",
     example: "Practice using all 8 phrases in one conversation!",
     exampleTranslation: "Попробуй использовать все 8 фраз в одном разговоре!",
-    youtubeId: "nfWlot6h_JM",
-    youtubeStart: 0,
+    youtubeSearch: "movie slang compilation English phrases",
   },
 ];
 
-const YoutubeEmbed = ({ videoId, startSeconds }: { videoId: string; startSeconds: number }) => {
-  const [showVideo, setShowVideo] = useState(false);
-
-  const src = `https://www.youtube.com/embed/${videoId}?start=${startSeconds}&rel=0&modestbranding=1&autoplay=1`;
+const YoutubeBlock = ({
+  searchQuery,
+  filmEmoji,
+  film,
+  phrase,
+}: {
+  searchQuery: string;
+  filmEmoji: string;
+  film: string;
+  phrase: string;
+}) => {
+  const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(searchQuery)}`;
+  const shortPhrase = phrase.length > 30 ? phrase.slice(0, 30) + "…" : phrase;
 
   return (
-    <div className="mt-6 rounded-xl overflow-hidden border border-white/10 bg-zinc-950">
-      {!showVideo ? (
-        <button
-          onClick={() => setShowVideo(true)}
-          className="w-full group relative"
-        >
-          <img
-            src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
-            alt="Превью видео"
-            className="w-full aspect-video object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-200"
-          />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-200">
-              <Icon name="Play" size={28} className="text-white ml-1" />
-            </div>
-          </div>
-          <div className="absolute bottom-3 left-3 bg-black/70 rounded-lg px-3 py-1 text-xs text-zinc-300">
-            🎬 Сцена из фильма — нажми, чтобы посмотреть
-          </div>
-        </button>
-      ) : (
-        <div className="aspect-video">
-          <iframe
-            src={src}
-            className="w-full h-full"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            title="Отрывок из фильма"
-          />
+    <div className="mt-5 rounded-xl border border-white/10 bg-zinc-950 overflow-hidden">
+      {/* Fake video preview */}
+      <div className="aspect-video relative bg-gradient-to-br from-zinc-900 to-zinc-800 flex flex-col items-center justify-center gap-4 px-6 text-center">
+        <div className="text-5xl">{filmEmoji}</div>
+        <div>
+          <p className="text-white font-semibold text-lg mb-1">"{shortPhrase}"</p>
+          <p className="text-zinc-400 text-sm">{film}</p>
         </div>
-      )}
+        <a
+          href={youtubeSearchUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 bg-red-600 hover:bg-red-500 transition-colors text-white font-semibold px-6 py-3 rounded-full text-sm shadow-lg hover:scale-105 transition-transform duration-200"
+        >
+          <Icon name="Play" size={16} className="ml-0.5" />
+          Смотреть сцену на YouTube
+        </a>
+        <p className="text-zinc-600 text-xs">Откроется YouTube с подборкой сцен из фильма</p>
+      </div>
     </div>
   );
 };
@@ -329,8 +316,14 @@ const Lessons = () => {
             </div>
           </div>
 
-          {/* YouTube video */}
-          <YoutubeEmbed videoId={lesson.youtubeId} startSeconds={lesson.youtubeStart} key={lesson.id} />
+          {/* YouTube block */}
+          <YoutubeBlock
+            key={lesson.id}
+            searchQuery={lesson.youtubeSearch}
+            filmEmoji={lesson.filmEmoji}
+            film={lesson.film}
+            phrase={lesson.phrase}
+          />
 
           {/* Navigation */}
           <div className="flex justify-center gap-4 mt-6 mb-12">
