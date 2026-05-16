@@ -2,7 +2,6 @@ import {
   InteractiveBackground,
   Header,
   HeroSection,
-  LicenseSection,
   AboutSection,
   ContactSection,
   Footer,
@@ -16,7 +15,6 @@ const Index = () => {
         <Header />
         <main>
           <HeroSection />
-          <LicenseSection />
           <AboutSection />
           <ContactSection />
         </main>

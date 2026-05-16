@@ -14,66 +14,75 @@ interface Question {
 const questions: Question[] = [
   {
     id: 1,
-    question: "В «Друзьях» Джои говорит «How you doin'?». Что это значит?",
-    film: "Friends",
-    options: ["Как дела? (флирт)", "Ты в порядке?", "Что ты делаешь?", "Куда идёшь?"],
+    question: "«It slipped my mind» — что означает эта фраза из «Короля Льва»?",
+    film: "🦁 Король Лев",
+    options: ["Я забыл об этом", "Это меня расстроило", "Мне пришла идея", "Я передумал"],
     correct: 0,
-    explanation: "«How you doin'?» — фирменная фраза Джои, используется как флирт или дружеское приветствие.",
+    explanation: "«It slipped my mind» — разговорное «вылетело из головы», «я забыл». Буквально: «выскользнуло из разума».",
   },
   {
     id: 2,
-    question: "Из «Шрека»: «That'll do, Donkey. That'll do.» — что имеет в виду Шрек?",
-    film: "Shrek",
-    options: ["Молодец, хватит", "Делай это сам", "Ты справишься", "Не делай этого"],
+    question: "Кевин кричит «Are you nuts?!» в «Один дома». Что он имеет в виду?",
+    film: "🏠 Один дома",
+    options: ["Ты что, сумасшедший?!", "Ты любишь орехи?", "Ты серьёзно?", "Тебе не страшно?"],
     correct: 0,
-    explanation: "«That'll do» — разговорное «хватит» или «достаточно», иногда с оттенком похвалы.",
+    explanation: "«Are you nuts?» — сленговое «ты что, псих?» или «ты в своём уме?». «Nuts» = сумасшедший.",
   },
   {
     id: 3,
-    question: "В «Во все тяжкие» часто говорят «to cook». Что это значит в контексте сленга?",
-    film: "Breaking Bad",
-    options: ["Готовить наркотики", "Хорошо готовить еду", "Злиться", "Торопиться"],
+    question: "«Spill the tea» из RuPaul's Drag Race — что значит эта фраза?",
+    film: "💅 RuPaul's Drag Race",
+    options: ["Расскажи сплетни / выложи всё", "Разлей чай", "Успокойся", "Поделись едой"],
     correct: 0,
-    explanation: "В уличном сленге «to cook» — производить наркотики, особенно метамфетамин.",
+    explanation: "«Spill the tea» — «выкладывай подробности», «расскажи, что случилось». «Tea» в сленге = горячие новости или сплетни.",
   },
   {
     id: 4,
-    question: "«That's what she said» из «Офиса» — это:",
-    film: "The Office",
-    options: [
-      "Пошлая шутка-каламбур",
-      "Цитата реального человека",
-      "Выражение удивления",
-      "Способ согласиться",
-    ],
+    question: "«Easy peasy, lemon squeezy» — Шрек говорит это, когда задание кажется ему...",
+    film: "🟢 Шрек",
+    options: ["Очень простым", "Кислым и неприятным", "Срочным", "Смешным"],
     correct: 0,
-    explanation: "Коронная фраза Майкла Скотта — добавляется после двусмысленного высказывания для пошлого юмора.",
+    explanation: "«Easy peasy, lemon squeezy» — детское выражение «проще простого», «раз плюнуть». Усиленная версия слова «easy».",
   },
   {
     id: 5,
-    question: "В «Семейном парне» Стьюи говорит «What the deuce?». Что это?",
-    film: "Family Guy",
-    options: [
-      "Смягчённая версия «What the hell?»",
-      "Выражение радости",
-      "Приветствие",
-      "Угроза",
-    ],
+    question: "«She totally ghosted me» из сериала «You» — что произошло?",
+    film: "👻 You",
+    options: ["Она перестала отвечать и пропала", "Она напугала меня", "Она обманула меня", "Она ушла от меня"],
     correct: 0,
-    explanation: "«Deuce» — эвфемизм вместо грубого слова. «What the deuce?» = «Какого чёрта?»",
+    explanation: "«Ghost» как глагол — внезапно прекратить общение, перестать отвечать на сообщения без объяснений.",
   },
   {
     id: 6,
-    question: "«I'm gonna make him an offer he can't refuse» — из «Крёстного отца». Что подразумевается?",
-    film: "The Godfather",
-    options: [
-      "Угроза под видом предложения",
-      "Выгодная деловая сделка",
-      "Просьба о помощи",
-      "Комплимент",
-    ],
+    question: "«She lowkey likes him» из «Сплетницы» — что это значит?",
+    film: "💋 Сплетница",
+    options: ["Она громко его любит", "Она его ненавидит втайне", "Она немного, втихаря ему симпатизирует", "Она открыто им восхищается"],
+    correct: 2,
+    explanation: "«Lowkey» — тихо, незаметно, слегка. «She lowkey likes him» = «она немного симпатизирует ему, хотя не признаётся».",
+  },
+  {
+    id: 7,
+    question: "«No cap» — фраза из «Очень странных дел». Что она означает?",
+    film: "🔴 Очень странные дела",
+    options: ["Без шапки", "Без преувеличений / серьёзно", "Не останавливайся", "Без ограничений"],
+    correct: 1,
+    explanation: "«No cap» = «не шучу», «серьёзно», «без лжи». «Cap» в сленге — ложь. «No cap» — «никакой лжи».",
+  },
+  {
+    id: 8,
+    question: "«She's so delulu» из фильма «Барби» — что это значит?",
+    film: "👗 Барби",
+    options: ["Она такая милая", "Она живёт в иллюзиях / оторвана от реальности", "Она очень смелая", "Она сумасбродная модница"],
+    correct: 1,
+    explanation: "«Delulu» — сокращение от «delusional» (иллюзорный). В сленге: человек, который верит в нереалистичные вещи о себе или других.",
+  },
+  {
+    id: 9,
+    question: "Какую фразу правильно использовать, если хочешь попросить друга рассказать подробности?",
+    film: "🎬 Итоговый вопрос",
+    options: ["Spill the tea!", "Ghost me!", "No cap, lowkey!", "It slipped my mind!"],
     correct: 0,
-    explanation: "Классическая фраза — завуалированная угроза. В сленге означает давление, от которого невозможно отказаться.",
+    explanation: "«Spill the tea!» = «выкладывай всё!» — именно так просят рассказать подробности или сплетни.",
   },
 ];
 
@@ -128,16 +137,14 @@ const TestSection = () => {
 
   const getResultMessage = () => {
     if (score === questions.length) return { emoji: "🏆", text: "Идеальный результат! Ты настоящий знаток киносленга!", color: "text-yellow-400" };
-    if (score >= 4) return { emoji: "🎬", text: "Отличный результат! Тебе точно зайдёт наш курс!", color: "text-green-400" };
-    if (score >= 2) return { emoji: "📽️", text: "Неплохо! Но есть куда расти — курс поможет!", color: "text-blue-400" };
+    if (score >= 7) return { emoji: "🎬", text: "Отличный результат! Ты чувствуешь живой английский!", color: "text-green-400" };
+    if (score >= 4) return { emoji: "📽️", text: "Неплохо! Курс поможет прокачать остальное!", color: "text-blue-400" };
     return { emoji: "🎓", text: "Самое время начать изучение сленга с нуля!", color: "text-purple-400" };
   };
 
   return (
     <section id="test" ref={ref} className="py-20 bg-zinc-900 relative overflow-hidden">
-      <div
-        className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]"
-      />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
       <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent" />
 
       <div
@@ -147,23 +154,23 @@ const TestSection = () => {
       >
         <div className="text-center mb-10">
           <h2 className="text-5xl font-bold text-white mb-3">Итоговый тест</h2>
-          <p className="text-zinc-400 text-lg">Проверь знание киносленга — 6 вопросов из реальных фильмов</p>
+          <p className="text-zinc-400 text-lg">9 реальных фраз из фильмов, мультиков и сериалов курса</p>
         </div>
 
         <div className="max-w-2xl mx-auto">
           {!showResult ? (
             <div className="bg-black/50 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
-              <div className="flex justify-between items-center mb-6">
+              <div className="flex justify-between items-center mb-4">
                 <span className="text-zinc-400 text-sm">Вопрос {current + 1} из {questions.length}</span>
                 <span className="text-purple-400 text-sm bg-purple-500/10 border border-purple-500/20 rounded-full px-3 py-1">
-                  🎬 {q.film}
+                  {q.film}
                 </span>
               </div>
 
               <div className="w-full bg-zinc-800 rounded-full h-1.5 mb-8">
                 <div
                   className="bg-white h-1.5 rounded-full transition-all duration-500"
-                  style={{ width: `${((current) / questions.length) * 100}%` }}
+                  style={{ width: `${(current / questions.length) * 100}%` }}
                 />
               </div>
 
@@ -193,7 +200,11 @@ const TestSection = () => {
               {selected !== null && (
                 <div className={`rounded-xl px-5 py-4 mb-6 border ${isCorrect ? "bg-green-500/10 border-green-500/20" : "bg-red-500/10 border-red-500/20"}`}>
                   <div className="flex items-start gap-3">
-                    <Icon name={isCorrect ? "CheckCircle" : "XCircle"} size={20} className={isCorrect ? "text-green-400 mt-0.5 shrink-0" : "text-red-400 mt-0.5 shrink-0"} />
+                    <Icon
+                      name={isCorrect ? "CheckCircle" : "XCircle"}
+                      size={20}
+                      className={isCorrect ? "text-green-400 mt-0.5 shrink-0" : "text-red-400 mt-0.5 shrink-0"}
+                    />
                     <p className={`text-sm ${isCorrect ? "text-green-300" : "text-red-300"}`}>
                       {q.explanation}
                     </p>
@@ -220,7 +231,14 @@ const TestSection = () => {
 
               <div className="flex gap-3 flex-wrap justify-center mb-8">
                 {answers.map((correct, i) => (
-                  <div key={i} className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${correct ? "bg-green-500/20 text-green-400 border border-green-500/30" : "bg-red-500/20 text-red-400 border border-red-500/30"}`}>
+                  <div
+                    key={i}
+                    className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${
+                      correct
+                        ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                        : "bg-red-500/20 text-red-400 border border-red-500/30"
+                    }`}
+                  >
                     {i + 1}
                   </div>
                 ))}
@@ -237,11 +255,11 @@ const TestSection = () => {
                 <Button
                   className="bg-white text-black hover:bg-zinc-200 px-8 py-5 font-semibold"
                   onClick={() => {
-                    const el = document.getElementById("courses");
+                    const el = document.getElementById("about");
                     if (el) el.scrollIntoView({ behavior: "smooth" });
                   }}
                 >
-                  Начать курс →
+                  Узнать о курсе →
                 </Button>
               </div>
             </div>
