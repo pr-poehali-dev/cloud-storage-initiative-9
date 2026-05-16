@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +52,7 @@ const Header = () => {
           <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 p-4 md:p-0">
             <li>
               <button
-                onClick={() => scrollToSection("courses")}
+                onClick={() => { navigate("/lessons"); setIsMenuOpen(false); }}
                 className="text-white hover:text-purple-400 transition-colors"
               >
                 Уроки
@@ -77,9 +79,9 @@ const Header = () => {
         <Button
           variant="outline"
           className="hidden md:block border-white/20 text-white hover:bg-white/10"
-          onClick={() => scrollToSection("test")}
+          onClick={() => navigate("/lessons")}
         >
-          Пройти тест
+          Начать учиться
         </Button>
       </div>
     </header>
